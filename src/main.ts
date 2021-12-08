@@ -8,6 +8,8 @@ studio.initialize();
 // Create a project with a saved state
 const proj = getProject("Animation practice", { state });
 
+const nudgableNumber = t.number(1, { nudgeMultiplier: 0.1 });
+
 function makeBouncingBox(i: number) {
   const sheet = proj.sheet("Bouncing box", "instance_" + i);
 
@@ -19,7 +21,7 @@ function makeBouncingBox(i: number) {
   // Box object
   const boxObj = sheet.object("Box", {
     y: 0,
-    stretch: t.number(1, { nudgeMultiplier: 0.1 }),
+    stretch: nudgableNumber,
   });
 
   // Box div
@@ -27,7 +29,7 @@ function makeBouncingBox(i: number) {
   boxDiv.className = "box";
   boxContainer.appendChild(boxDiv);
 
-  // Animation
+  // Box animation
   boxDiv.addEventListener("click", () =>
     sheet.sequence.play({ iterationCount: Infinity })
   );
@@ -36,6 +38,23 @@ function makeBouncingBox(i: number) {
     boxDiv.style.transform = `translateY(${-y}px) scale(${
       1 / stretch
     }, ${stretch})`;
+  });
+
+  // Dust div
+  const dustDiv = document.createElement("div");
+  dustDiv.className = "dust";
+  boxContainer.appendChild(dustDiv);
+
+  // Dust object
+  const dustObj = sheet.object("Dust", {
+    opacity: nudgableNumber,
+    scaleX: nudgableNumber,
+  });
+
+  // Dust animation
+  dustObj.onValuesChange(({ opacity, scaleX }) => {
+    dustDiv.style.opacity = String(opacity);
+    dustDiv.style.transform = `scaleX(${scaleX})`;
   });
 }
 
