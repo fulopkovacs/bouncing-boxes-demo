@@ -63,8 +63,8 @@
                     "handles": [
                       0.5,
                       1,
-                      0.15059187455756312,
-                      0.5398230088495575
+                      0.1709189082150157,
+                      0.8854339291249698
                     ],
                     "value": 90
                   },
@@ -159,6 +159,8 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "kv5_eP-BR-KQT9xq",
+    "syrsRpwkcEaW15DY",
     "HC8iDNTHWDUAujbt",
     "o3YF_KK5SiB_VNXg"
   ]
