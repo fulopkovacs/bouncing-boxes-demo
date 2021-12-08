@@ -1,0 +1,17 @@
+{
+  "name": "07-theatre-js-falling-boxes",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --port 1234",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@theatre/studio": "0.4.0-dev.15",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.0"
+  },
+  "dependencies": {
+    "@theatre/core": "0.4.0-dev.15"
+  }
+}
